@@ -29,7 +29,6 @@ except Exception as e:
     data = {}
 
 MODEL = data.get("model", None)
-ACCURACY = data.get("accuracy")
 TRAIN_ACCURACY = data.get("train_accuracy")
 TEST_ACCURACY = data.get("test_accuracy")
 PRECISION = data.get("precision")
@@ -57,7 +56,7 @@ class CardioInput(BaseModel):
 # -------------------------------
 @app.get("/")
 def root():
-    acc_text = f"{ACCURACY*100:.2f}%" if ACCURACY is not None else "N/A"
+    acc_text = f"{TEST_ACCURACY*100:.2f}%" if TEST_ACCURACY is not None else "N/A"
     return {"message": f"Cardio API running. Model accuracy: {acc_text}"}
 
 # -------------------------------
@@ -104,4 +103,5 @@ def metrics():
         "f1_score": F1_SCORE,
         "best_params": BEST_PARAMS
     }
+
 
