@@ -1,10 +1,10 @@
 import streamlit as st
 import requests
-
+import os
 # -------------------------------
 # FastAPI URL (LOCAL or DEPLOY)
 # -------------------------------
-FASTAPI_URL = "http://127.0.0.1:8000/predict"
+FASTAPI_URL = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000/predict")
 
 # -------------------------------
 # Streamlit page config
@@ -97,7 +97,6 @@ if submit:
 # -------------------------------
 st.markdown("---")
 st.subheader("📊 Model Performance Analysis")
-import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 st.image(
@@ -121,3 +120,4 @@ st.image(
 
 st.markdown("---")
 st.caption("Developed by Aum | Streamlit + FastAPI ML Project")
+
