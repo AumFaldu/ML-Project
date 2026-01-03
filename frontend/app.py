@@ -4,7 +4,7 @@ import os
 # -------------------------------
 # FastAPI URL (LOCAL or DEPLOY)
 # -------------------------------
-FASTAPI_URL = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000/predict")
+FASTAPI_URL = "https://cardio-backend-oq0l.onrender.com/predict"
 
 # -------------------------------
 # Streamlit page config
@@ -120,4 +120,5 @@ st.image(
 
 st.markdown("---")
 st.caption("Developed by Aum | Streamlit + FastAPI ML Project")
+
 
