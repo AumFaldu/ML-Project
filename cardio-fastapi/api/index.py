@@ -4,7 +4,9 @@ from pydantic import BaseModel
 import pandas as pd
 import pickle
 import warnings
-
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 # -------------------------------
 # Suppress version warnings
 # -------------------------------
@@ -20,7 +22,7 @@ app = FastAPI(title="Cardio Disease Prediction API")
 # Load model and metrics
 # -------------------------------
 try:
-    with open("model.pkl", "rb") as f:
+    with open(MODEL_PATH, "rb") as f:
         data = pickle.load(f)
 except Exception as e:
     print("❌ Error loading model.pkl:", e)
@@ -102,3 +104,4 @@ def metrics():
         "f1_score": F1_SCORE,
         "best_params": BEST_PARAMS
     }
+
