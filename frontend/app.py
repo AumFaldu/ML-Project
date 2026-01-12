@@ -102,24 +102,25 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 st.image(
     os.path.join(BASE_DIR, "confusion_matrix.png"),
     caption="Confusion Matrix",
-    use_container_width=True
+    width="stretch"
 )
 
 st.image(
     os.path.join(BASE_DIR, "metrics_bar.png"),
     caption="Performance Metrics",
-    use_container_width=True
+    width="stretch"
 )
 
 st.image(
     os.path.join(BASE_DIR, "roc_curve.png"),
     caption="ROC Curve",
-    use_container_width=True
+    width="stretch"
 )
 
 
 st.markdown("---")
 st.caption("CardioML | Developed by Aum | Streamlit + FastAPI ML Project")
+
 
 
 
