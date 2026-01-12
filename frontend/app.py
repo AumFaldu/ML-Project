@@ -10,7 +10,7 @@ FASTAPI_URL = "https://cardio-backend-oq0l.onrender.com/predict"
 # Streamlit page config
 # -------------------------------
 st.set_page_config(
-    page_title="Cardio Disease Prediction",
+    page_title="CardioML",
     layout="centered"
 )
 
@@ -119,6 +119,7 @@ st.image(
 
 
 st.markdown("---")
-st.caption("Developed by Aum | Streamlit + FastAPI ML Project")
+st.caption("CardioML | Developed by Aum | Streamlit + FastAPI ML Project")
+
 
 
